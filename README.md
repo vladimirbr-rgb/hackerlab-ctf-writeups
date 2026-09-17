@@ -20,12 +20,12 @@
 
 | # | Task | Topic | Status |
 |---|---|---|---|
-| 1 | [Network Configuration Analysis](./task-01/) | Network analysis, VLAN configuration | Completed |
+| 1 | [Anonymizer — Decoding Client Records](./task-01/) | Python analysis, data decoding | Completed |
 | 2 | [Time Capsule](./task-02-time-capsule/) | Time-lock encryption, age, drand, tlock | Completed |
 
 ## Repository structure
 
-- [`task-01/`](./task-01/) — первое задание: анализ клиентских конфигураций и сетевых параметров.
+- [`task-01/`](./task-01/) — первое задание: анализ Python-обфускации и восстановление данных из учебных артефактов.
 - [`task-02-time-capsule/`](./task-02-time-capsule/) — второе задание: расшифровка time-lock контейнера с помощью `age-plugin-tlock` и drand.
 - В папках `commands/` сохранены использованные команды.
 - В папках `screenshots/` размещены скриншоты процесса выполнения.
