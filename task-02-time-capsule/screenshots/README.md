@@ -1,27 +1,22 @@
 # Screenshots — Time Capsule
 
-Эта папка содержит скриншоты, подтверждающие выполнение учебного задания Time Capsule.
+This directory contains sanitized screenshots documenting the execution of the Time Capsule HackerLab CTF task.
 
-## Recommended evidence
+For descriptions and direct links to every uploaded image, see the [evidence index](./evidence.md).
 
-Подходящие скриншоты для публичного write-up:
+## Included evidence
 
-- проверка версии Cargo;
-- доступность `age-plugin-tlock`;
-- вывод `age-plugin-tlock --help`;
-- проверка `https://api.drand.sh/info`;
-- создание identity для правильной drand chain;
-- успешное выполнение `age --decrypt` без текста ошибки;
-- проверка типа расшифрованного файла через `file final_capsule.txt`.
+- Transfer of the task archive from Windows PowerShell to Ubuntu VM
+- Archive extraction and artifact inventory
+- Identification of the encrypted age container
+- Verification of the `age-plugin-tlock` tool
+- HackerLab confirmation of successful task completion
 
-## Publication rules
+## Publication policy
 
-Перед загрузкой изображений необходимо скрыть или обрезать:
+The repository does not include screenshots that expose:
 
-- итоговый флаг вида `CODEBY{...}`;
-- содержимое `final_capsule.txt`;
-- строки приватных identity/ключей;
-- токены, пароли и персональные данные;
-- файлы или URL, содержащие секретные параметры.
-
-Скриншот успешной команды `age --decrypt` можно публиковать, если на нём не отображается содержимое расшифрованного файла и не показана приватная часть `tlock.key`.
+- The final CTF flag
+- AES keys, IVs, recovered seeds, or other key material
+- tlock identity files or private keys
+- Original encrypted files and decrypted output
