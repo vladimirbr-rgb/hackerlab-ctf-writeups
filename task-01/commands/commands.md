@@ -1,42 +1,71 @@
-# Commands — Network Configuration Analysis
+# Commands — Anonymizer
 
-В этом файле сохранены базовые команды, применявшиеся для анализа учебных артефактов в Ubuntu VM.
+This file documents the safe, reproducible commands used during the Anonymizer HackerLab CTF task.
 
-> Лабораторная среда была настроена на Windows PC через Windows PowerShell. Анализ выполнялся в Ubuntu virtual machine.
+> The lab environment was prepared on a Windows PC through Windows PowerShell. The analysis was performed in an Ubuntu virtual machine using Bash and Python 3.
 
-## Navigation and file inspection
+## 1. Verify time synchronization and update packages
 
 ```bash
+sudo systemctl status chrony
+sudo chronyc -a makestep
+date
+timedatectl
+sudo apt update
+```
+
+## 2. Install the archive extraction utility
+
+```bash
+sudo apt install -y unzip
+```
+
+## 3. Open the task directory
+
+```bash
+cd ~/ctf/hackerlab/anonymizer
 pwd
-ls -la
-find . -maxdepth 2 -type f
 ```
 
-## Inspect client configuration files
+## 4. Inspect the challenge archive
 
 ```bash
-cat client1.txt
-cat client2.txt
-cat client3.txt
-cat client4.txt
+unzip -l anonymizator.zip
 ```
 
-## Search for network-related parameters
+## 5. Inventory available files
 
 ```bash
-grep -RniE 'vlan|ip|address|gateway|route|dns|network' .
+find . -maxdepth 1 -type f -printf '%f\n' | sort
 ```
 
-## Network diagnostics
+Expected artifact names:
+
+```text
+anonymization.py
+anonymizator.zip
+client1.txt
+client2.txt
+client3.txt
+client4.txt
+decode.py
+```
+
+## 6. Validate the decoder
 
 ```bash
-ip a
-ip route
-ip link
+python3 -m py_compile decode.py
+echo "Decoder script syntax check: OK"
 ```
 
-## Safe result handling
+## Result handling
 
-Результат был проверен и отправлен на учебной платформе HackerLab.
+The task was completed successfully and the result was accepted by HackerLab.
 
-Флаг, пароли, токены, приватные адреса и иные чувствительные данные не публикуются.
+The public repository intentionally does not include:
+
+- The final CTF flag
+- Decoded client records
+- Personal data from challenge artifacts
+- The original archive
+- Credentials, private keys, tokens, or passwords
