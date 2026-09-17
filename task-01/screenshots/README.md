@@ -1,21 +1,22 @@
-# Screenshots — Network Configuration Analysis
+# Screenshots — Anonymizer
 
-В этой папке будут размещены скриншоты выполнения учебного задания.
+This directory contains sanitized screenshots documenting the execution of the Anonymizer HackerLab CTF task.
 
-## Evidence policy
+For descriptions and direct links to every uploaded image, open the [evidence index](./evidence.md).
 
-Скриншоты должны подтверждать:
+## Included evidence
 
-- запуск Ubuntu virtual machine;
-- работу в Bash-terminal;
-- анализ клиентских файлов;
-- результаты безопасных диагностических команд;
-- успешное завершение задания без раскрытия итогового флага.
+- Ubuntu VM environment preparation and time synchronization
+- Package update and `unzip` installation
+- Archive content listing and challenge-artifact inventory
+- Python decoder syntax validation
+- HackerLab confirmation that the task was completed successfully
 
-Перед публикацией необходимо скрыть или обрезать:
+## Publication policy
 
-- значение флага вида `CODEBY{...}`;
-- пароли, токены и ключи;
-- приватные IP-адреса, если они относятся к реальной инфраструктуре;
-- персональные данные;
-- URL с токенами или временными идентификаторами.
+The repository intentionally does not include screenshots that expose:
+
+- The final CTF flag
+- Decoded client records or personal information
+- Private keys, tokens, passwords, or credentials
+- Original challenge archives or decrypted output
